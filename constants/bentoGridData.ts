@@ -1,4 +1,76 @@
-export const BENTO_GRID_DATA = {
+// ─── Type Definitions ───────────────────────────────────────────────
+
+export interface ProfileStat {
+  label: string;
+  value: string;
+  trend: "up" | "down" | "neutral";
+}
+
+export interface ActivationStep {
+  label: string;
+  progress: number;
+}
+
+export interface AlertDetails {
+  [key: string]: string;
+}
+
+export interface EnrichmentDetail {
+  key: string;
+  value: string;
+  type: "text" | "boolean";
+}
+
+export interface CRMRow {
+  company: string;
+  seats: string;
+}
+
+export interface BentoGridData {
+  reports: {
+    title: string;
+    profile: {
+      company: string;
+      joined: string;
+      stats: ProfileStat[];
+    };
+    activation: {
+      title: string;
+      percentage: string;
+      steps: ActivationStep[];
+    };
+  };
+  milestones: {
+    title: string;
+    description: string;
+    alert: {
+      time: string;
+      app: string;
+      title: string;
+      user: string;
+      email: string;
+      details: AlertDetails;
+    };
+  };
+  enrichment: {
+    title: string;
+    description: string;
+    badge: string;
+    details: EnrichmentDetail[];
+  };
+  crm: {
+    title: string;
+    description: string;
+    table: {
+      headers: string[];
+      rows: CRMRow[];
+    };
+  };
+}
+
+// ─── Data ───────────────────────────────────────────────────────────
+
+export const BENTO_GRID_DATA: BentoGridData = {
   reports: {
     title: "We automatically generate reports for each of your customers",
     profile: {
