@@ -39,19 +39,19 @@ export function FeatureBentoGrid() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-visible"
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 overflow-visible"
       >
-        {/* Full-width top row: Reports — overflow-visible so activation card bleeds down */}
-        <motion.div variants={itemVariants} className="col-span-1 md:col-span-3 flex flex-col overflow-visible">
+        {/* Full-width top row: Reports */}
+        <motion.div variants={itemVariants} className="col-span-1 md:col-span-4 flex flex-col overflow-visible">
           <FeatureReports />
         </motion.div>
 
-        {/* Bottom row: Milestones (2 cols) + right column (Enrichment + CRM stacked) */}
+        {/* Bottom row: Milestones (left, 2 cols) + Enrichment+CRM (right, 2 cols) — equal 50/50 */}
         <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 flex flex-col">
           <FeatureMilestones />
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-col gap-6 col-span-1">
+        <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 flex flex-col gap-6">
           <FeatureEnrichment />
           <FeatureCRM />
         </motion.div>
