@@ -1,0 +1,59 @@
+Prompts used:
+
+I've got to implement this page in my application, can you break it down further so that we can together decide what could be the best approach to impement this UI properly. Break down into components, methods of implementation, and the different structures along with the tradeoffs that we might have to encounter
+
+While deciding the components list or the tree, you can consider
+AGENTS.md. Also, I'll let you know what I can see from this picture, basically, we have different sections, which show different grids, with few elements popping out, which can be done by z-indexing.  According to me, we can go with CSS grid bento style, and i can break the component roughly into 4 sub components. What are your thoughts on this
+
+For the questions that you were confused about,
+
+1. Responsiveness: We can go with the flex-col approach, but the popped elements or part of the components should be shown here. 
+
+2. Yes, we can do something like stagger in on scroll. 
+
+3. Go with the single file for storing all the dummy data, so that the layout wrapper remains clean
+
+Yes, so you can go component by component, adding them into the UI, so that I can see them, check them out, and then we can proceed
+
+The pathing for all these files is not correct, because of that page.tsx shows an error. Be sure to check for errors everytime you finish a module
+
+
+Now, in this bento box implementation, the issue is, the first section/component, that is
+FeatureReports.tsx, it should have full width, and also, the second section, which is Company Activation one, it should be popping a little out with higher z-index than the rest. Also, the Intercom section is a different section, which should have alower z-index, so that it appears to be lower when it comes to z-index. Break the main component into two sub components. Plan it and then implement
+
+
+Move the intercom section a bit lower, and add a background, which is there in the image. Try to position it properly.The pink gradient, that you just added, is presnt on the Intercom, and not the background section, which holds both the Intercom section, and the Company activation section
+
+
+AGENTS.md file:
+
+## RULES (followed strictly)
+- this product is strictly based on next js+ typescript+ tailwindcss
+- make sure the typescript is followed everywhere in the UI
+- Add small transitions and interactive elements wherever mendatory in the UI
+- use framer-motion for transitions between the different sections or pages to make it look fluid and connected
+- use sm: md: lg: as different breakpoints for different types of views, in order to provide a consistent mobile view
+- focus on mobile design as well
+
+## STRUCTURE OF THE PROJECT
+- `app/` - put all the routes, layouts here
+- `components/` - put all the components here
+- `lib/` - put all the helper functions, constants, etc here
+- `containers/` - page level layout sections (which are client heavy, can be placed here)
+- `hooks/` - custom hoooks if needed, can be placed here
+- `stores/` - use this if we are storing something client side
+- `types/` - put all the typescript types here
+- `utils/` - put all the utility functions here segregate them in folders if needed
+- `styles/` - global css, and tailwaind base should be present here
+- `public/` - static assets
+- `constants/` - store all the constant data or text here
+
+## COMPONENT RULES
+
+- Default to server side components, add use client( that will be client side, only when needed)
+- for naming, use Pascal case for components, camelCase for the functions, and UPPER_SNAKE_CASE for the constants across the applications
+
+
+    
+
+

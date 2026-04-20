@@ -7,7 +7,7 @@ export function IntercomProfileCard() {
   return (
     <div
       className="
-        relative z-10
+        relative z-10 overflow-hidden
         w-72 bg-white
         rounded-2xl p-5 shadow-sm border border-gray-100
         transition-transform duration-300 hover:scale-[1.02]
@@ -15,14 +15,17 @@ export function IntercomProfileCard() {
     >
       {/* Header */}
 
-      <div className="flex items-center gap-3 mb-5">
-        {/* Gradient strip at the top of the shared background */}
-        {/* <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-r from-rose-200 via-pink-200 to-red-200 opacity-80" /> */}
+      {/* Top pink border/bar */}
+      <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-r from-[#fce7eb] to-[#f8d0d8] mb-2" />
+
+      <div className="relative flex items-center gap-3 mb-5">
         <div className="w-10 h-10 bg-[#0a2540] rounded-xl flex items-center justify-center text-white text-xs font-bold tracking-widest">
           |||||
         </div>
         <div>
-          <p className="font-bold text-gray-900 text-sm">{reports.profile.company}</p>
+          <p className="font-bold text-gray-900 text-sm">
+            {reports.profile.company}
+          </p>
           <p className="text-xs text-gray-500">{reports.profile.joined}</p>
         </div>
       </div>
@@ -30,7 +33,10 @@ export function IntercomProfileCard() {
       {/* Stats */}
       <div className="space-y-3">
         {reports.profile.stats.map((stat, idx) => (
-          <div key={idx} className="flex justify-between items-center text-xs border-t border-gray-100 pt-2">
+          <div
+            key={idx}
+            className="flex justify-between items-center text-xs border-t border-gray-100 pt-2"
+          >
             <span className="flex items-center gap-1.5 text-gray-600">
               <span className="text-green-500 text-sm">⚡</span>
               {stat.label}
