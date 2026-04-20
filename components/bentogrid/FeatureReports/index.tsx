@@ -9,7 +9,7 @@ const { reports } = BENTO_GRID_DATA;
 
 export function FeatureReports() {
   return (
-    <div className="relative w-full min-h-[360px] bg-[#d1f1fd] rounded-[32px] p-8 overflow-visible flex flex-col md:flex-row gap-8">
+    <div className="relative w-full min-h-[360px] bg-[#d1f1fd] rounded-[32px] px-8 pt-8 overflow-visible flex flex-col md:flex-row gap-8 border border-black/10">
 
       {/* Left: Heading text */}
       <div className="md:w-2/5 flex items-start pt-2">
@@ -31,7 +31,7 @@ export function FeatureReports() {
         </div>
 
         {/* Activation card — pops to the right, bleeds below */}
-        <div className="absolute right-0 md:-right-10 -bottom-20 z-30 -rotate-[4deg]">
+        <div className="absolute right-0 md:-right-10 -bottom-10 z-30 -rotate-[3deg]">
           <CompanyActivationCard />
         </div>
 

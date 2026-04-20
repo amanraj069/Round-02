@@ -14,7 +14,10 @@ export function IntercomProfileCard() {
       "
     >
       {/* Header */}
+
       <div className="flex items-center gap-3 mb-5">
+        {/* Gradient strip at the top of the shared background */}
+        {/* <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-r from-rose-200 via-pink-200 to-red-200 opacity-80" /> */}
         <div className="w-10 h-10 bg-[#0a2540] rounded-xl flex items-center justify-center text-white text-xs font-bold tracking-widest">
           |||||
         </div>

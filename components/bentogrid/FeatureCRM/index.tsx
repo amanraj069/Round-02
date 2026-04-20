@@ -8,27 +8,21 @@ const { crm } = BENTO_GRID_DATA;
 
 export function FeatureCRM() {
   return (
-    // overflow-visible so CRM table card can bleed downward
-    <div className="relative w-full bg-[#dbf6d6] rounded-[32px] p-8 overflow-visible flex flex-col gap-4">
-
+    <div className="relative w-full h-full bg-[#dcfce0] rounded-[32px] pt-8 pl-8 overflow-hidden flex flex-col justify-between border border-black/10">
       {/* Text block */}
-      <div>
-        <h2 className="text-xl md:text-2xl font-bold text-[#1a6e2e] mb-2">
+      <div className="pr-8 pb-10">
+        <h2 className="text-[22px] font-bold text-[#0d5920] tracking-tight mb-2">
           {crm.title}
         </h2>
-        <p className="text-sm text-[#3a8b4e] leading-relaxed">
+        <p className="text-[14px] text-[#1b7a30] leading-[1.6] mb-2">
           {crm.description}
         </p>
       </div>
 
-      {/* CRM table card — absolutely positioned to pop out of the bottom-right */}
-      <div className="absolute bottom-[-2rem] right-[-16] w-[88%] z-20 shadow-xl rounded-2xl">
+      {/* CRM table card perfectly tucked into bottom right corner via ml-auto */}
+      <div className="mt-auto ml-auto w-[85%] sm:w-[90%] xl:w-[82%] shadow-[-12px_-12px_32px_rgba(0,0,0,0.03)] z-10 flex">
         <CRMTableCard />
       </div>
-
-      {/* Spacer to ensure the card doesn't collapse the section height */}
-      <div className="h-32" />
-
     </div>
   );
 }
